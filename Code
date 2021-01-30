@@ -1,0 +1,46 @@
+#import libraries
+import math
+import random
+import tinkter
+
+#Create grid and make computer start game without user having to touch anything
+class Map:
+  def __init__(self, master, rows = 10, columns = 10):
+    self.master = master
+    self.row = random.randrange(rows)
+    self.col = random.randrage(columns)
+    self.cost = 0 
+    self.found = False
+
+#create font and specify font 
+    Button = tkinter.Button
+    self.buttons = []
+    options = dict(text = '[?]' , font = 'Courier 8')
+    for r in range(rows):
+      br = []
+      self.buttons.append(br)
+      for c in range(colo=umns):
+        b = Button(master, commans = lambda r=r, c=c: self (r, c), fg='blue', **options)
+        b.grid(row =r, colum = c) 
+        br.append(b)
+        master.mainloop(
+  
+  #generate distance from zero and create loop to continue playing
+  def __call__ (self, row, col):
+    if self.found == True:
+        self.master.quit()
+      distance = int( round(math.hypot( row-self.row, col-self.col)))
+      self.buttons[row][col].configure(text = '{}'. format(distance), bg = 'yellow', fg = 'red') 
+      self.cost += 1
+      if distance ==0:
+         print(' You Win! You used {} sonar readings.'. format(self.cost))
+         self.found = true
+
+#print map /grid and end the game
+         def main():
+           root = tinker.tik()
+           map = Map(root)
+           root.destroy()
+
+           if __name__=='__main__':
+             main()
